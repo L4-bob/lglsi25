@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class Inversion{
+public static void remplir(int n,int t[]){
+Scanner bob = new Scanner( System.in );
+for(int i=0;i<n;i++){
+System.out.println("donner t["+i+"]:");
+t[i]=bob.nextInt();
+}
+}
+public static void afficher(int n,int t[]){
+for(int i=0;i<n;i++){
+System.out.println("t["+i+"]:"+t[i]);
+}
+}
+public static void inverse(int n,int t[]){
+int aux;
+int j=n-1;
+for(int i=0;i<j;i++){
+aux=t[i];
+t[i]=t[j];
+t[j]=aux;
+j--;
+}
+}
+public static void main(String [] args){
+int n=5;
+int t[]=new int [n];
+remplir(n,t);
+afficher(n,t);
+inverse(n,t);
+afficher(n,t);
+}
+}
